@@ -15,6 +15,8 @@ const Home = () => {
         <MobileSidebar />
         {isHomepage && <DefaultSidebar />}
 
+        <Outlet />
+
         
       </div>
     </>

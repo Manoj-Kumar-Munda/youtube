@@ -10,4 +10,23 @@ export const YOUTUBE_API =
 export const VIDEO_DATA_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
 export const YOUTUBE_SEARCH_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://corsproxy.io/?"+"http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+  export const topics = [
+    { title: "All" },
+    { title: "React" },
+    { title: "Javascript" },
+    { title: "Web Development" },
+    { title: "HTML" },
+    { title: "CSS" },
+    { title: "React Native" },
+    { title: "Big Data" },
+    { title: "SQL" },
+    { title: "Carry Minati" },
+    { title: "BGMI" },
+    { title: "Live" },
+    { title: "Animals" },
+    { title: "Scout" },
+    { title: "Mortal" },
+    { title: "Adipursush" },
+  ];
