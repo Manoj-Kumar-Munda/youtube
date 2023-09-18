@@ -13,7 +13,7 @@ const VideoContainer = () => {
     getVideos();
   }, [pageToken]);
 
-  console.log(API_KEY)
+  
 
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_API);

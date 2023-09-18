@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { YOUTUBE_SEARCH_SUGGESTION_API } from "../utils/constants";
 import { setInputOnFocus } from "../utils/appSlice";
 import { setCacheResults } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
+import { convertToSearchParams } from "../utils/helperFunction";
 
 const Searchbar = () => {
   const dispatch = useDispatch();
@@ -28,10 +30,8 @@ const Searchbar = () => {
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
-    console.log("API call - " + searchQuery);
     const data = await fetch(YOUTUBE_SEARCH_SUGGESTION_API + searchQuery);
     const json = await data.json();
-    console.log(json[1]);
     setSuggestions(json[1]);
     dispatch(
       setCacheResults({
@@ -40,13 +40,18 @@ const Searchbar = () => {
     );
   };
 
+  const handleSuggestionClick = (search_query) => {
+    setSearchQuery( () => search_query);
+    setShowSuggestion(false);
+  }
+
   const handleOnFocus = () => {
     dispatch(setInputOnFocus(true));
     setShowSuggestion(true);
   };
   const handleOnBlur = () => {
     dispatch(setInputOnFocus(false));
-    setShowSuggestion(false);
+
   };
 
   const handleChange = (value) => {
@@ -59,8 +64,7 @@ const Searchbar = () => {
         id="search-bar"
         className="relative w-full max-w-xl border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
       >
-        {
-          showSuggestion &&
+        {showSuggestion && (
           <div className="absolute bg-white border top-12 left-0 right-0 rounded-md">
             {suggestions.length === 0 ? (
               searchQuery !== "" && (
@@ -72,9 +76,8 @@ const Searchbar = () => {
                   <li
                     key={index}
                     className="px-2 hover:bg-gray-200"
-                    onClick={() => { 
-                      setSearchQuery(item)
-                      setShowSuggestion(false);
+                    onClick={() => {
+                      handleSuggestionClick(item)
                     }}
                   >
                     <a href="#" className="flex space-x-3 items-center">
@@ -92,7 +95,7 @@ const Searchbar = () => {
               </ul>
             )}
           </div>
-        }
+        )}
 
         <button className="px-3 py-2 rounded-l-2xl">
           <div className="w-6 h-6 hidden group-focus-within:block">
@@ -108,11 +111,14 @@ const Searchbar = () => {
           onFocus={() => handleOnFocus()}
           onBlur={() => handleOnBlur()}
         />
-        <button className="bg-gray-200 border-none px-3 py-2 sm:rounded-r-3xl">
+        <Link
+          to={"/search?searchQuery=" + convertToSearchParams(searchQuery)}
+          className="bg-gray-200 border-none px-3 py-2 sm:rounded-r-3xl"
+        >
           <div className="w-6 h-6">
             <img src={Search} alt="hamburgur" className="w-full h-full" />
           </div>
-        </button>
+        </Link>
       </div>
 
       <div className="w-10 h-10 p-2 hover:bg-gray-300 rounded-full">
