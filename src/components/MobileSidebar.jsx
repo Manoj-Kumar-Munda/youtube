@@ -27,7 +27,7 @@ const MobileSidebar = () => {
             isMobileSidebarOpen ? "active" : ""
           }`}
         >
-          <div className="flex items-center py-2 w-full px-2">
+          <div className="flex items-center py-2 w-full px-2 bg-white">
             <div className="flex justify-between items-center gap-6">
               <div className="w-10 h-10 p-2 hover:bg-gray-300 rounded-full">
                 <button

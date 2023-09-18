@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Search from "../assets/Icons/search.svg";
 import Mic from "../assets/Icons/voice-search-icon.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { YOUTUBE_SEARCH_SUGGESTION_API } from "../utils/constants";
 import { setInputOnFocus } from "../utils/appSlice";
 import { setCacheResults } from "../utils/searchSlice";
 
 const Searchbar = () => {
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
+  const [showSuggestion, setShowSuggestion] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const cacheResults = useSelector((store) => store.search);
 
@@ -28,7 +29,7 @@ const Searchbar = () => {
 
   const getSearchSuggestions = async () => {
     console.log("API call - " + searchQuery);
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const data = await fetch(YOUTUBE_SEARCH_SUGGESTION_API + searchQuery);
     const json = await data.json();
     console.log(json[1]);
     setSuggestions(json[1]);
@@ -41,9 +42,11 @@ const Searchbar = () => {
 
   const handleOnFocus = () => {
     dispatch(setInputOnFocus(true));
+    setShowSuggestion(true);
   };
   const handleOnBlur = () => {
     dispatch(setInputOnFocus(false));
+    setShowSuggestion(false);
   };
 
   const handleChange = (value) => {
@@ -54,32 +57,42 @@ const Searchbar = () => {
     <div className="flex-1 flex md:justify-center justify-end items-center gap-2 md:gap-4">
       <div
         id="search-bar"
-        className="relative focus-within:w-full focus-within:md:w-1/2 md:w-1/2 border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
+        className="relative w-full max-w-xl border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
       >
-        <div className="hidden group-focus-within:block absolute bg-white border top-12 left-0 right-0 rounded-md">
-          {suggestions.length === 0 ? (
-            searchQuery !== "" && (
-              <h1 className="text-center py-2">No result found</h1>
-            )
-          ) : (
-            <ul className="py-3 space-y-1">
-              {suggestions.map((item, index) => (
-                <li key={index} className="px-2 hover:bg-gray-200" onClick={() => setSearchQuery(item)}>
-                  <a href="#" className="flex space-x-3 items-center">
-                    <div className="w-5 h-5">
-                      <img
-                        src={Search}
-                        alt="search-icon"
-                        className="w-full h-full"
-                      />
-                    </div>
-                    <span className="font-semibold">{item}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        {
+          showSuggestion &&
+          <div className="absolute bg-white border top-12 left-0 right-0 rounded-md">
+            {suggestions.length === 0 ? (
+              searchQuery !== "" && (
+                <h1 className="text-center py-2">No result found</h1>
+              )
+            ) : (
+              <ul className="py-3 space-y-1">
+                {suggestions.map((item, index) => (
+                  <li
+                    key={index}
+                    className="px-2 hover:bg-gray-200"
+                    onClick={() => { 
+                      setSearchQuery(item)
+                      setShowSuggestion(false);
+                    }}
+                  >
+                    <a href="#" className="flex space-x-3 items-center">
+                      <div className="w-5 h-5">
+                        <img
+                          src={Search}
+                          alt="search-icon"
+                          className="w-full h-full"
+                        />
+                      </div>
+                      <span className="font-semibold">{item}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        }
 
         <button className="px-3 py-2 rounded-l-2xl">
           <div className="w-6 h-6 hidden group-focus-within:block">

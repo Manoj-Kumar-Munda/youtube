@@ -12,7 +12,7 @@ const DefaultSidebar = () => {
   const isDefaultMenuOpen = useSelector(store => store.app.isDefaultSidebarOpen)
   return (
     <>
-      <div className={`fixed left-0 z-50 ${isDefaultMenuOpen ? "md:w-auto lg:w-60 group" : ""} `}>
+      <div className={`fixed left-0 z-40 ${isDefaultMenuOpen ? "md:w-auto lg:w-60 group" : ""} `}>
         <div
         id="sidebar"
           className={`md:px-2 hidden md:block h-screen overflow-y-auto ${isDefaultMenuOpen ? "lg:p-3" : ""} `}

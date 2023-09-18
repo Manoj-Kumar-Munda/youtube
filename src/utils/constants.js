@@ -1,15 +1,18 @@
 
 export const API_KEY = "AIzaSyDSmcr5kY3IkI5_F4Sneqc6Ne7zyqCTV_w";
 
+export const VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&pageToken=CBQQAA&regionCode=IN&key=";
+
 export const YOUTUBE_CHANNEL_INFO_API =
   "https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=";
 export const YOUTUBE_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=150&regionCode=IN&key=" +
-  API_KEY;
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key="+API_KEY;
+  
+  // regionCode=IN&key="+API_KEY;
 
 export const VIDEO_DATA_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
-export const YOUTUBE_SEARCH_API =
+export const YOUTUBE_SEARCH_SUGGESTION_API =
   "https://corsproxy.io/?"+"http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
   export const topics = [
