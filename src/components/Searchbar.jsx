@@ -112,7 +112,7 @@ const Searchbar = () => {
           onBlur={() => handleOnBlur()}
         />
         <Link
-          to={"/search?searchQuery=" + convertToSearchParams(searchQuery)}
+          to={"/search?search_query=" + convertToSearchParams(searchQuery)}
           className="bg-gray-200 border-none px-3 py-2 sm:rounded-r-3xl"
         >
           <div className="w-6 h-6">

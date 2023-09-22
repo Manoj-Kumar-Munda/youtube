@@ -15,6 +15,15 @@ export const VIDEO_DATA_API =
 export const YOUTUBE_SEARCH_SUGGESTION_API =
   "https://corsproxy.io/?"+"http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
+export const YOUTUBE_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=";
+
+
+// regionCode=IN&key=["
+
+export const YOUTUBE_SEARCH_API_SORTED = 
+"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=";
+// one%20piece&type=video&key="
+
   export const topics = [
     { title: "All" },
     { title: "React" },

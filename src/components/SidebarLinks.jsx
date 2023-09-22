@@ -43,7 +43,7 @@ export const DefaultSidebarLinks = ({
 
 export const MobileSidebarLinks = ({ icon, link }) => {
   return (
-    <div id="items" className="w-[calc(100%-24px)]">
+    <div id="items" className="">
       <Link className="block hover:bg-gray-200 rounded-xl cursor-pointer" to={"/"}>
         <div className="py-2 px-3 min-h-[40px] flex flex-row items-center">
           <div className="w-6 h-6 mr-6">
@@ -60,8 +60,8 @@ export const MobileSidebarLinks = ({ icon, link }) => {
 
 export const Subscription = ({ channelIcon, channelName }) => {
   return (
-    <div className="w-[calc(100%-24px)]">
-      <Link className="block hover:bg-gray-200 rounded-xl cursor-pointer" to={"/"}>
+    <div className="">
+      <div className=" hover:bg-gray-200 rounded-xl cursor-pointer">
         <div className="py-2 px-3 min-h-[40px] flex flex-row items-center">
           <div className="mr-6">
             <img className="w-6 h-6 rounded-full" src={channelIcon} />
@@ -70,7 +70,7 @@ export const Subscription = ({ channelIcon, channelName }) => {
             <span className="text-base  line-clamp-1">{channelName}</span>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

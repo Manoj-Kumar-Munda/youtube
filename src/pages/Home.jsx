@@ -11,6 +11,8 @@ const Home = () => {
   const isMobileSidebarOpen = useSelector(
     (store) => store.app.isMobileSidebarOpen
   );
+
+  const isDefaultSidebarOpen = useSelector( store => store.app.isDefaultSidebarOpen);
   return (
     <>
       <Header />

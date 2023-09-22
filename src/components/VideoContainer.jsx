@@ -7,19 +7,19 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  const totalResults = useRef(null);
-  const [pageToken, setPageToken] = useState('');
+  // const totalResults = useRef(null);
+  // const [pageToken, setPageToken] = useState('');
   useEffect(() => {
     getVideos();
-  }, [pageToken]);
+  }, []);
 
   
 
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
-    (!totalResults.current && (totalResults.current = json?.pageInfo?.totalResults))
-    setVideos([...json?.items, ...videos]);
+    // (!totalResults.current && (totalResults.current = json?.pageInfo?.totalResults))
+    setVideos(json?.items);
     // setPageToken(json?.nextPageToken);
     console.log(videos.length);
   };

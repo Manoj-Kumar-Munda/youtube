@@ -14,7 +14,6 @@ const MainContent = () => {
           <TopicList />
           <VideoContainer />
           
-          
         </div>
       
     </>

@@ -16,8 +16,7 @@ export function viewCount(num) {
     }
   }
 
-export const convertToSearchQuery = (str) => 
-  str.split("+").join("%20")
+export const convertToSearchQuery = (str) => str.split(" ").join("%20");
 
 
 export const convertToSearchParams = (str) => str.split(" ").join("+");
