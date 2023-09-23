@@ -41,17 +41,19 @@ const Searchbar = () => {
   };
 
   const handleSuggestionClick = (search_query) => {
-    setSearchQuery( () => search_query);
+    setSearchQuery(() => search_query);
     setShowSuggestion(false);
-  }
+  };
 
   const handleOnFocus = () => {
     dispatch(setInputOnFocus(true));
     setShowSuggestion(true);
   };
   const handleOnBlur = () => {
+    setTimeout(
+      () => setShowSuggestion(false),300
+    )
     dispatch(setInputOnFocus(false));
-
   };
 
   const handleChange = (value) => {
@@ -77,7 +79,7 @@ const Searchbar = () => {
                     key={index}
                     className="px-2 hover:bg-gray-200"
                     onClick={() => {
-                      handleSuggestionClick(item)
+                      handleSuggestionClick(item);
                     }}
                   >
                     <a href="#" className="flex space-x-3 items-center">

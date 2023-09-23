@@ -1,7 +1,7 @@
 import React from "react";
 import { viewCount } from "../utils/helperFunction";
 import useChannel from "../hooks/useChannel";
-
+import { Link } from "react-router-dom";
 
 const VideoCard = ({ item }) => {
   const { snippet, statistics } = item;
@@ -13,11 +13,13 @@ const VideoCard = ({ item }) => {
   return (
     <div className="inline-flex flex-col gap-2 cursor-pointer w-full">
       <div className="w-full overflow-hidden rounded-lg hover:rounded-none transition-all">
-        <img
-          src={thumbnails?.high?.url}
-          alt={title}
-          className="rounded-lg aspect-video scale-105 object-center w-full object-cover "
-        />
+        <Link to={"watch"}>
+          <img
+            src={thumbnails?.high?.url}
+            alt={title}
+            className="rounded-lg aspect-video scale-105 object-center w-full object-cover "
+          />
+        </Link>
       </div>
 
       <div className="flex flex-row px-1">

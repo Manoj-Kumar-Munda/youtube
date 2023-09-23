@@ -7,7 +7,7 @@ import SearchedVideosContainer from "../components/SearchedVideosContainer";
 
 const SearchPage = () => {
   const [searchParam] = useSearchParams();
-  const searchQuery = convertToSearchQuery(searchParam.get("search_query"));
+  const searchQuery = searchParam.get("search_query");
   const isMenuOpen = useSelector((store) => store.app.isDefaultSidebarOpen);
   return (
     <div

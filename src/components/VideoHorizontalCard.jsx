@@ -2,7 +2,7 @@ import React from "react";
 import useChannel from "../hooks/useChannel";
 
 const VideoHorizontalCard = ({ video }) => {
-  console.log(video);
+
   const {
     title,
     description,

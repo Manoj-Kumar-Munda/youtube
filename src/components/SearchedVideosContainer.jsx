@@ -1,15 +1,12 @@
 import React from 'react'
 import useSearchResults from '../hooks/useSearchResult'
-import { useSelector } from 'react-redux';
 import VideoHorizontalCard from './VideoHorizontalCard';
 
 
 const SearchedVideosContainer = ({searchQuery}) => {
-    useSearchResults(searchQuery);
-
-    const videos = useSelector(store => store.video.searchResults)
+    const videos = useSearchResults(searchQuery);
   return (
-    <div className='my-2 flex flex-col gap-4'>
+    <div className='my-2 flex flex-col gap-8'>
       {
         videos.map( (item) => {
           return(
