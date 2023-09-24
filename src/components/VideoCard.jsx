@@ -13,21 +13,21 @@ const VideoCard = ({ item }) => {
   return (
     <div className="inline-flex flex-col gap-2 cursor-pointer w-full">
       <div className="w-full overflow-hidden rounded-lg hover:rounded-none transition-all">
-        <Link to={"watch"}>
+        
           <img
-            src={thumbnails?.high?.url}
+            src={thumbnails?.maxres?.url || thumbnails?.high?.url || thumbnails?.standard?.url}
             alt={title}
-            className="rounded-lg aspect-video scale-105 object-center w-full object-cover "
+            className="rounded-lg aspect-video object-center w-full object-cover "
           />
-        </Link>
+        
       </div>
 
       <div className="flex flex-row px-1">
         <div className="self-start">
           <img
-            src={channelData?.thumbnails?.medium?.url}
+            src={channelData?.thumbnails?.high?.url}
             alt={channelTitle}
-            className="w-9 h-9 rounded-full"
+            className="w-9 h-9 rounded-full object-cover object-center"
           />
         </div>
 

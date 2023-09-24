@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { API_KEY, YOUTUBE_API } from "../utils/constants";
+import React, { useEffect, useState } from "react";
+import { YOUTUBE_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
@@ -21,7 +21,6 @@ const VideoContainer = () => {
     // (!totalResults.current && (totalResults.current = json?.pageInfo?.totalResults))
     setVideos(json?.items);
     // setPageToken(json?.nextPageToken);
-    console.log(videos.length);
   };
 
   return (
@@ -37,7 +36,7 @@ const VideoContainer = () => {
       {videos.length === 0
         ? new Array(10).fill(0).map((item, index) => <Shimmer key={index} />)
         : videos.map((item) => (
-            <Link to={"/watch?v=" + item.id} key={item?.id}>
+            <Link to={"watch?v=" + item.id} key={item?.id}>
               <VideoCard item={item} />
             </Link>
           ))}

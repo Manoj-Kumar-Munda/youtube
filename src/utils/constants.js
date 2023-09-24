@@ -11,18 +11,16 @@ export const YOUTUBE_API =
   // regionCode=IN&key="+API_KEY;
 
 export const VIDEO_DATA_API =
-  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=";
 export const YOUTUBE_SEARCH_SUGGESTION_API =
   "https://corsproxy.io/?"+"http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=";
 
 
-// regionCode=IN&key=["
-
 export const YOUTUBE_SEARCH_API_SORTED = 
 "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=";
-// one%20piece&type=video&key="
+
 
   export const topics = [
     { title: "All" },
