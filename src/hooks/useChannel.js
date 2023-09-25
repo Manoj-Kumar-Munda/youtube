@@ -18,7 +18,7 @@ const useChannel = (channelId) => {
         const json = await data.json();
         const snippet = json?.items[0]?.snippet;
         setChannelInfo(snippet);
-        console.log(snippet)
+        
     
       };
 

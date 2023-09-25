@@ -12,7 +12,7 @@ const useVideoData = (videoId) => {
     const getVideoData = async() => {
         const data = await fetch(VIDEO_DATA_API+videoId+"&key="+API_KEY);
         const json = await data.json();
-        // console.log(json?.items);
+        console.log(json?.items);
         setVideoData(json?.items[0]);
         
     }

@@ -1,6 +1,8 @@
 
 export const API_KEY = "AIzaSyDSmcr5kY3IkI5_F4Sneqc6Ne7zyqCTV_w";
 
+export const RELATED_VIDEO_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&videoCategoryId=";
+
 export const VIDEOS_API = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&pageToken=CBQQAA&regionCode=IN&key=";
 
 export const YOUTUBE_CHANNEL_INFO_API =
