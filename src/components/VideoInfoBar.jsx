@@ -1,6 +1,6 @@
 import React from "react";
 import useChannel from "../hooks/useChannel";
-import { viewCount } from "../utils/helperFunction";
+import { convertCount} from "../utils/helperFunction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsDown, faThumbsUp } from "@fortawesome/free-regular-svg-icons";
 import { faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
@@ -28,7 +28,7 @@ const VideoInfoBar = ({ channelId }) => {
           <div className="flex flex-col justify-center">
             <h2 className="text-sm font-semibold">{title}</h2>
             <p className="text-xs font-semibold text-gray-600">
-              {viewCount(subscriberCount)} subscribers
+              {convertCount(subscriberCount)} subscribers
             </p>
           </div>
         </div>

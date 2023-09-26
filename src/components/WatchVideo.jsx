@@ -1,11 +1,13 @@
 import React from "react";
 
 import VideoInfoBar from "./VideoInfoBar";
+import { convertCount } from "../utils/helperFunction";
 
 const WatchVideo = ({ videoInfo }) => {
   const { snippet, statistics, id } = videoInfo;
   const { channelId, description, title } = snippet;
   const { viewCount, likeCount, commentCount } = statistics;
+
 
   return (
     <div className="w-full flex flex-col basis-8/12 flex-grow">
@@ -18,6 +20,13 @@ const WatchVideo = ({ videoInfo }) => {
       <h1 className="font-semibold py-2">{title}</h1>
       <div>
         <VideoInfoBar channelId={channelId} />
+      </div>
+      <div className="bg-gray-100 px-3 rounded-2xl ">
+        <p className="text-sm font-semibold py-1">{convertCount(viewCount)} views 2 hours ago</p>
+        <p className="text-sm font-semibold line-clamp-4 max-h-24 overflow-hidden">
+          {description}
+        </p>
+        <span className="text-sm font-semibold cursor-pointer">Show More</span>
       </div>
     </div>
   );

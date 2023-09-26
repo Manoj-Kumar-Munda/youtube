@@ -1,4 +1,4 @@
-export function viewCount(num) {
+export function convertCount(num) {
     if (num.length < 4) {
       return num;
     } else if (num.length < 7) {

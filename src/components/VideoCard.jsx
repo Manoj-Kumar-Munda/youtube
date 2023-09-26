@@ -1,5 +1,5 @@
 import React from "react";
-import { viewCount } from "../utils/helperFunction";
+import { convertCount } from "../utils/helperFunction";
 import useChannel from "../hooks/useChannel";
 
 const VideoCard = ({ item }) => {
@@ -8,6 +8,7 @@ const VideoCard = ({ item }) => {
   const { channelId, channelTitle, title, thumbnails } = snippet;
 
   const channelData = useChannel(channelId);
+  
 
   
   
@@ -27,7 +28,7 @@ const VideoCard = ({ item }) => {
       <div className="flex flex-row px-1">
         <div className="self-start">
           <img
-            src={channelData?.snippet?.thumbnails?.high?.url}
+            src={channelData?.snippet?.thumbnails?.high?.url || channelData?.snippet?.thumbnails?.medium?.url}
             alt={channelTitle}
             className="w-9 h-9 rounded-full object-cover object-center"
           />
@@ -41,7 +42,7 @@ const VideoCard = ({ item }) => {
             </span>
             <div className="space-x-1">
               <span className="text-sm font-semibold text-gray-600">
-                {viewCount(statistics.viewCount)} views
+                {convertCount(statistics.viewCount)} views
               </span>
               <span className="text-sm font-normal">&#8226;</span>
               <span className="text-sm font-semibold text-gray-600">
