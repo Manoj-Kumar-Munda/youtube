@@ -19,7 +19,7 @@ const RelatedVideoCards = ({ video }) => {
           className="object-cover w-full"
         />
       </div>
-      <div className="w-full flex flex-col gap-1">
+      <div className="w-full flex flex-col">
           <h1 className="text-sm font-semibold line-clamp-2">{title}</h1>
           <span className="text-xs font-semibold">{channelTitle}</span>
           <div className="flex gap-1 items-center">

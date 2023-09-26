@@ -20,8 +20,6 @@ export const YOUTUBE_SEARCH_SUGGESTION_API =
 export const YOUTUBE_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=";
 
 
-export const YOUTUBE_SEARCH_API_SORTED = 
-"https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&order=viewCount&q=";
 
 
   export const topics = [

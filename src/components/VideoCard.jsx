@@ -25,7 +25,7 @@ const VideoCard = ({ item }) => {
       <div className="flex flex-row px-1">
         <div className="self-start">
           <img
-            src={channelData?.thumbnails?.high?.url}
+            src={channelData?.snippet?.thumbnails?.high?.url}
             alt={channelTitle}
             className="w-9 h-9 rounded-full object-cover object-center"
           />

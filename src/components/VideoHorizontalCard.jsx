@@ -39,7 +39,7 @@ const VideoHorizontalCard = ({ video }) => {
         <div className="flex gap-2 items-center">
           <div>
             <img
-              src={channelData?.thumbnails?.medium?.url}
+              src={channelData?.snippet?.thumbnails?.medium?.url}
               alt={channelTitle}
               className="object-cover w-6 h-6 rounded-full"
             />

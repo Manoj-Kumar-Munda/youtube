@@ -16,13 +16,14 @@ const useChannel = (channelId) => {
             API_KEY
         );
         const json = await data.json();
-        const snippet = json?.items[0]?.snippet;
+        const snippet = json?.items[0];
+        console.log(json);
         setChannelInfo(snippet);
-        
-    
       };
 
-      return channelInfo;
+      
+
+      return (channelInfo,length > 0 ? channelInfo : null);
 
 }
 
