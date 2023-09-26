@@ -1,13 +1,11 @@
 import React from "react";
 
+import VideoInfoBar from "./VideoInfoBar";
+
 const WatchVideo = ({ videoInfo }) => {
-  console.log(videoInfo)
+  console.log(videoInfo);
   const { snippet, statistics, id } = videoInfo;
-  const {
-    channelId,
-    description,
-    title,
-  } = snippet;
+  const { channelId, description, title } = snippet;
   const { viewCount, likeCount, commentCount } = statistics;
 
   return (
@@ -17,9 +15,11 @@ const WatchVideo = ({ videoInfo }) => {
         src={`https://www.youtube.com/embed/${id}?si=LCgbMDFcmI_PjNc3`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      
       ></iframe>
-      {/* <TitleBar channelId={channelId} title={title} /> */}
+      <h1 className="font-semibold py-2">{title}</h1>
+      <div>
+        <VideoInfoBar channelId={channelId} />
+      </div>
     </div>
   );
 };

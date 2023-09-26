@@ -12,7 +12,7 @@ const RelatedVideoCards = ({ video }) => {
 
   return (
     <div className="flex gap-1">
-      <div className="max-w-sm w-full overflow-hidden aspect-video rounded-lg">
+      <div className="self-start shrink-0 basis-40 w-full overflow-hidden aspect-video rounded-lg">
         <img
           src={thumbnails?.high?.url}
           alt={title}
@@ -20,7 +20,7 @@ const RelatedVideoCards = ({ video }) => {
         />
       </div>
       <div className="w-full flex flex-col gap-1">
-          <h1 className="text-sm font-semibold lin">{title}</h1>
+          <h1 className="text-sm font-semibold line-clamp-2">{title}</h1>
           <span className="text-xs font-semibold">{channelTitle}</span>
           <div className="flex gap-1 items-center">
             <span className="text-xs text-gray-500 font-semibold">

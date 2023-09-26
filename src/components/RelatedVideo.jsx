@@ -22,8 +22,8 @@ const RelatedVideo = ({videoInfo}) => {
       <div className='flex flex-col gap-4'>
       {
         relatedVideos && (
-          relatedVideos.map( (item) => {
-            return <RelatedVideoCards key={item?.id?.videoId} video={item?.snippet} />
+          relatedVideos.map( (item,index) => {
+            return <RelatedVideoCards key={index} video={item?.snippet} />
 
           })
 
