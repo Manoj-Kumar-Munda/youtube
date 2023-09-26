@@ -21,7 +21,7 @@ const WatchVideo = ({ videoInfo }) => {
       <div>
         <VideoInfoBar channelId={channelId} />
       </div>
-      <div className="bg-gray-100 px-3 rounded-2xl ">
+      <div className="bg-gray-100 px-3 rounded-2xl my-2 ">
         <p className="text-sm font-semibold py-1">{convertCount(viewCount)} views 2 hours ago</p>
         <p className="text-sm font-semibold line-clamp-4 max-h-24 overflow-hidden">
           {description}
