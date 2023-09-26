@@ -1,5 +1,4 @@
 import React from "react";
-import useChannel from "../hooks/useChannel";
 
 const RelatedVideoCards = ({ video }) => {
 
@@ -16,7 +15,7 @@ const RelatedVideoCards = ({ video }) => {
         <img
           src={thumbnails?.high?.url}
           alt={title}
-          className="object-cover w-full"
+          className="object-cover w-full object-center"
         />
       </div>
       <div className="w-full flex flex-col">

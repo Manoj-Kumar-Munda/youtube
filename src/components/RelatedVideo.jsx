@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { API_KEY, RELATED_VIDEO_API } from '../utils/constants';
-import VideoHorizontalCard from './VideoHorizontalCard';
 import RelatedVideoCards from './RelatedVideoCards';
 
 const RelatedVideo = ({videoInfo}) => {
   const {snippet:{categoryId}} = videoInfo;
-  console.log(categoryId);
   const [relatedVideos, setRelatedVideos] = useState([]);
 
   useEffect( () => {

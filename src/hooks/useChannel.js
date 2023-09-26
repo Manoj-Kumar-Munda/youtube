@@ -7,7 +7,7 @@ const useChannel = (channelId) => {
     const [channelInfo, setChannelInfo] = useState([])
     useEffect(() => {
         getChannelData();
-      }, []);
+      }, [channelId]);
     
       const getChannelData = async () => {
         const data = await fetch(
@@ -17,13 +17,13 @@ const useChannel = (channelId) => {
         );
         const json = await data.json();
         const snippet = json?.items[0];
-        console.log(json);
+    
         setChannelInfo(snippet);
       };
 
       
 
-      return (channelInfo,length > 0 ? channelInfo : null);
+      return channelInfo;
 
 }
 

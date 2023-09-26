@@ -3,7 +3,6 @@ import React from "react";
 import VideoInfoBar from "./VideoInfoBar";
 
 const WatchVideo = ({ videoInfo }) => {
-  console.log(videoInfo);
   const { snippet, statistics, id } = videoInfo;
   const { channelId, description, title } = snippet;
   const { viewCount, likeCount, commentCount } = statistics;

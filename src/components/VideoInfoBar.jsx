@@ -7,8 +7,7 @@ import { faDownload, faShare } from "@fortawesome/free-solid-svg-icons";
 
 const VideoInfoBar = ({ channelId }) => {
   const channelData = useChannel(channelId);
-  console.log(channelData);
-  if (!channelData) return;
+  if (!channelData || channelData.length === 0 ) return;
   const {
     snippet: { thumbnails, title },
     statistics: { subscriberCount },
@@ -19,7 +18,7 @@ const VideoInfoBar = ({ channelId }) => {
       {/* channelData && subs buttons */}
       <div className="flex gap-4">
         <div className="flex gap-2">
-          <div className="border rounded-full">
+          <div className="rounded-full">
             <img
               src={thumbnails?.high?.url}
               alt={title}
@@ -50,7 +49,7 @@ const VideoInfoBar = ({ channelId }) => {
           </button>
         </div>
 
-        <button className="flex items-center gap-2 border py-1 rounded-2xl px-2 ">
+        <button className="hidden md:flex items-center gap-2 border py-1 rounded-2xl px-2 ">
           <div>
             <FontAwesomeIcon
               icon={faShare}
@@ -60,7 +59,7 @@ const VideoInfoBar = ({ channelId }) => {
           </div>
           <span className="text-sm font-semibold">Share</span>
         </button>
-        <button className="flex items-center gap-2 border py-1 rounded-2xl px-2 ">
+        <button className="hidden md:flex items-center gap-2 border py-1 rounded-2xl px-2 ">
           <div>
             <FontAwesomeIcon icon={faDownload} style={{ color: "#5c6370" }} width={20}/>
           </div>
