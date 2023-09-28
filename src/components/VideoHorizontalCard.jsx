@@ -1,8 +1,8 @@
 import React from "react";
 import useChannel from "../hooks/useChannel";
+import { Link } from "react-router-dom";
 
-const VideoHorizontalCard = ({ video }) => {
-
+const VideoHorizontalCard = ({ video, videoId }) => {
   const {
     title,
     description,
@@ -15,13 +15,16 @@ const VideoHorizontalCard = ({ video }) => {
 
   return (
     <div className="flex gap-3 ">
-      <div className="max-w-sm w-full overflow-hidden rounded-lg self-start">
+      <Link
+        to={"/watch?v=" + videoId}
+        className="max-w-sm w-full overflow-hidden rounded-lg self-start"
+      >
         <img
           src={thumbnails?.high?.url}
           alt={title}
-          className="scale-105 object-cover w-full aspect-video"
+          className="object-cover w-full aspect-video"
         />
-      </div>
+      </Link>
       <div className="w-full flex flex-col gap-2">
         <div>
           <h1 className="text-base md:text-lg font-normal">{title}</h1>
@@ -46,7 +49,7 @@ const VideoHorizontalCard = ({ video }) => {
           </div>
           <span className="text-xs font-semibold">{channelTitle}</span>
         </div>
-        
+
         <p className="line-clamp-1 text-xs text-gray-600 font-semibold">
           {description}
         </p>

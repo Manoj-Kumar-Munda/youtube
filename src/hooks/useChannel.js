@@ -4,7 +4,7 @@ import { API_KEY, YOUTUBE_CHANNEL_INFO_API } from "../utils/constants";
 
 const useChannel = (channelId) => {
     
-    const [channelInfo, setChannelInfo] = useState([])
+    const [channelInfo, setChannelInfo] = useState(null)
     useEffect(() => {
         getChannelData();
       }, [channelId]);

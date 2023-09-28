@@ -10,7 +10,7 @@ const SearchedVideosContainer = ({searchQuery}) => {
       {
         videos.map( (item) => {
           return(
-            <VideoHorizontalCard key={item?.id?.videoId} video={item?.snippet} />
+            <VideoHorizontalCard key={item?.id?.videoId} video={item?.snippet} videoId={item?.id?.videoId} />
           )
         })
       }

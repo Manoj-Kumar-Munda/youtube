@@ -11,18 +11,14 @@ const VideoContainer = () => {
     getVideos();
   }, []);
 
-  
-
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_API);
     const json = await data.json();
     setVideos(json?.items);
-
   };
 
   return (
     <div className="video-container mt-4">
-      
       {videos.length === 0
         ? new Array(10).fill(0).map((item, index) => <Shimmer key={index} />)
         : videos.map((item) => (

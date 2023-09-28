@@ -8,27 +8,28 @@ const VideoCard = ({ item }) => {
   const { channelId, channelTitle, title, thumbnails } = snippet;
 
   const channelData = useChannel(channelId);
-  
-
-  
-  
 
   return (
     <div className="inline-flex flex-col gap-2 cursor-pointer w-full">
       <div className="w-full aspect-video overflow-hidden rounded-lg hover:rounded-none transition-all">
-        
-          <img
-            src={thumbnails?.maxres?.url || thumbnails?.high?.url || thumbnails?.standard?.url}
-            alt={title}
-            className=" object-center w-full object-cover "
-          />
-        
+        <img
+          src={
+            thumbnails?.maxres?.url ||
+            thumbnails?.high?.url ||
+            thumbnails?.standard?.url
+          }
+          alt={title}
+          className=" object-center w-full object-cover "
+        />
       </div>
 
       <div className="flex flex-row px-1">
         <div className="self-start">
           <img
-            src={channelData?.snippet?.thumbnails?.high?.url || channelData?.snippet?.thumbnails?.medium?.url}
+            src={
+              channelData?.snippet?.thumbnails?.high?.url ||
+              channelData?.snippet?.thumbnails?.medium?.url
+            }
             alt={channelTitle}
             className="w-9 h-9 rounded-full object-cover object-center"
           />

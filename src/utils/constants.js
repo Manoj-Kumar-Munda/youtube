@@ -10,7 +10,6 @@ export const YOUTUBE_CHANNEL_INFO_API =
 export const YOUTUBE_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=20&regionCode=IN&key="+API_KEY;
   
-  // regionCode=IN&key="+API_KEY;
 
 export const VIDEO_DATA_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&id=";
@@ -18,6 +17,8 @@ export const YOUTUBE_SEARCH_SUGGESTION_API =
   "https://corsproxy.io/?"+"http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=";
+
+export const COMMENTS_API = "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&videoId=";
 
 
 
