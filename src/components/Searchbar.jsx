@@ -67,7 +67,7 @@ const Searchbar = () => {
         className="relative w-full max-w-xl border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
       >
         {showSuggestion && (
-          <div className="absolute bg-white border top-12 left-0 right-0 rounded-md">
+          <div className={`absolute bg-white top-12 left-0 right-0 rounded-md ${suggestions.length !== 0 && 'border'}`}>
             {suggestions.length === 0 ? (
               searchQuery !== "" && (
                 <h1 className="text-center py-2">No result found</h1>
@@ -82,7 +82,7 @@ const Searchbar = () => {
                       handleSuggestionClick(item);
                     }}
                   >
-                    <a href="#" className="flex space-x-3 items-center">
+                    <p className="flex space-x-3 items-center">
                       <div className="w-5 h-5">
                         <img
                           src={Search}
@@ -91,7 +91,7 @@ const Searchbar = () => {
                         />
                       </div>
                       <span className="font-semibold">{item}</span>
-                    </a>
+                    </p>
                   </li>
                 ))}
               </ul>

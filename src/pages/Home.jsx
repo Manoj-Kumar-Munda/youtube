@@ -12,12 +12,11 @@ const Home = () => {
     (store) => store.app.isMobileSidebarOpen
   );
 
-  const isDefaultSidebarOpen = useSelector( store => store.app.isDefaultSidebarOpen);
   return (
     <>
       <Header />
       {isMobileSidebarOpen && (
-        <div className={`absolute z-50 inset-0 bg-slate-900/70 ${isHomepage && "lg:hidden "}`}></div>
+        <div className={`fixed z-50 inset-0 bg-slate-900/70 ${isHomepage && "lg:hidden "}`}></div>
       )}
       <div className="relative">
         <MobileSidebar />
