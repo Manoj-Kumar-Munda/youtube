@@ -12,7 +12,7 @@ const Home = () => {
     (store) => store.app.isMobileSidebarOpen
   );
 
-  console.log(import.meta.env.VITE_API_KEY)
+  
 
   return (
     <>

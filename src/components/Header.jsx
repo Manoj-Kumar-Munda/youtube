@@ -11,6 +11,7 @@ import {
 } from "../utils/appSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -119,7 +120,9 @@ const Header = () => {
               </button>
             </div>
             <div className=" w-24">
-              <img src={Logo} alt="logo" className="w-full h-full" />
+              <Link to={"/"}>
+                <img src={Logo} alt="logo" className="w-full h-full" />
+              </Link>
             </div>
           </>
         )}
