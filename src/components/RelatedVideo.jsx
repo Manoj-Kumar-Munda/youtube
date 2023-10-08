@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { API_KEY, RELATED_VIDEO_API } from '../utils/constants';
+import { RELATED_VIDEO_API } from '../utils/constants';
 import RelatedVideoCards from './RelatedVideoCards';
 
 const RelatedVideo = ({videoInfo}) => {
@@ -11,7 +11,7 @@ const RelatedVideo = ({videoInfo}) => {
   },[])
 
   const getRelatedVideos = async() => {
-    const data = await fetch(RELATED_VIDEO_API+categoryId+"&key="+API_KEY);
+    const data = await fetch(RELATED_VIDEO_API+categoryId+"&key="+import.meta.env.VITE_API_KEY);
     const json = await data.json();
     setRelatedVideos(json?.items);
   }

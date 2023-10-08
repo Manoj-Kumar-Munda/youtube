@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { API_KEY, VIDEO_DATA_API } from "../utils/constants";
+import { VIDEO_DATA_API } from "../utils/constants";
 
 
 const useVideoData = (videoId) => {
@@ -10,7 +10,7 @@ const useVideoData = (videoId) => {
     },[videoId])
     
     const getVideoData = async() => {
-        const data = await fetch(VIDEO_DATA_API+videoId+"&key="+API_KEY);
+        const data = await fetch(VIDEO_DATA_API+videoId+"&key="+import.meta.env.VITE_API_KEY);
         const json = await data.json();
         setVideoData(json?.items[0]);
         
