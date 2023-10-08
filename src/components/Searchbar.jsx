@@ -67,7 +67,7 @@ const Searchbar = () => {
         className="relative w-full max-w-xl border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
       >
         {showSuggestion && (
-          <div className={`absolute bg-white top-12 left-0 right-0 rounded-md ${suggestions.length !== 0 && 'border'}`}>
+          <div className={`absolute bg-white overflow-hidden top-12 left-0 right-0 rounded-md ${suggestions.length !== 0 && 'border'}`}>
             {suggestions.length === 0 ? (
               searchQuery !== "" && (
                 <h1 className="text-center py-2">No result found</h1>
@@ -115,17 +115,17 @@ const Searchbar = () => {
         />
         <Link
           to={"/search?search_query=" + convertToSearchParams(searchQuery)}
-          className="bg-gray-200 border-none px-3 py-2 sm:rounded-r-3xl"
+          className="bg-gray-200 border-none px-3 py-2 rounded-r-3xl overflow-hidden"
         >
-          <div className="w-6 h-6">
-            <img src={Search} alt="hamburgur" className="w-full h-full" />
+          <div className="w-6 h-6 overflow-hidden">
+            <img src={Search} alt="search-btn" className="w-full h-full" />
           </div>
         </Link>
       </div>
 
       <div className="w-10 h-10 p-2 hover:bg-gray-300 rounded-full">
-        <button className=" w-6 h-6">
-          <img src={Mic} alt="hamburgur" className="w-full h-full" />
+        <button className="w-6 h-6">
+          <img src={Mic} alt="mic" className="w-full h-full" />
         </button>
       </div>
     </div>
