@@ -115,7 +115,7 @@ const Searchbar = () => {
         />
         <Link
           to={"/search?search_query=" + convertToSearchParams(searchQuery)}
-          className="bg-gray-200 border-none px-3 py-2 rounded-r-3xl overflow-hidden"
+          className="bg-gray-200 border-none pr-4 pl-2 sm:px-3 py-2 rounded-r-3xl overflow-hidden"
         >
           <div className="w-6 h-6 overflow-hidden">
             <img src={Search} alt="search-btn" className="w-full h-full" />
