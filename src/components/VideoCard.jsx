@@ -19,7 +19,7 @@ const VideoCard = ({ item }) => {
             thumbnails?.standard?.url
           }
           alt={title}
-          className=" object-center w-full object-cover "
+          className=" object-center w-full object-cover"
         />
       </div>
 
@@ -36,7 +36,7 @@ const VideoCard = ({ item }) => {
         </div>
 
         <div className="video-info flex-1 flex flex-col px-2">
-          <h2 className="line-clamp-2 font-semibold leading-tight">{title}</h2>
+          <h2 className="line-clamp-2 font-semibold leading-tight" title={title}>{title}</h2>
           <div className="flex flex-col m-0 p-0">
             <span className="text-sm font-semibold text-gray-600">
               {channelTitle}
