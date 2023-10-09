@@ -2,6 +2,8 @@ import React from 'react'
 import Profile from "../assets/Icons/profile-icon-png-910.png";
 import  Upload  from "../assets/Icons/upload.svg";
 import Notifications  from "../assets/Icons/notifications.svg";
+import Github from "../assets/Icons/Github-icon.svg";
+import { Link } from 'react-router-dom';
 
 const RightHeaderMenu = () => {
   return (
@@ -21,9 +23,11 @@ const RightHeaderMenu = () => {
           </button>
         </div>
 
-        <div className="w-15 h-9 rounded-full">
-          <button className="">
-            <img src={Profile} className="w-8 h-8" />
+        <div className="">
+          <button className="w-9 h-9">
+            <Link to={"https://github.com/Manoj-Kumar-Munda/youtube"}>
+            <img src={Github} className="w-full h-full rounded-full" title='Github' />
+            </Link>
           </button>
         </div>
       </div>
