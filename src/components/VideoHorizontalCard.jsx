@@ -14,10 +14,10 @@ const VideoHorizontalCard = ({ video, videoId }) => {
   const channelData = useChannel(channelId);
 
   return (
-    <div className="flex gap-3 ">
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
       <Link
         to={"/watch?v=" + videoId}
-        className="max-w-sm w-full overflow-hidden rounded-lg self-start"
+        className="sm:max-w-sm w-full overflow-hidden rounded-lg self-start"
       >
         <img
           src={thumbnails?.high?.url}
@@ -25,10 +25,24 @@ const VideoHorizontalCard = ({ video, videoId }) => {
           className="object-cover w-full aspect-video"
         />
       </Link>
-      <div className="w-full flex flex-col gap-2">
+      <div className="flex sm:block flex-row gap-2 ">
+        <div className="sm:hidden self-start pt-1">
+          <img
+            src={channelData?.snippet?.thumbnails?.medium?.url}
+            alt={channelTitle}
+            className="object-cover w-6 h-6 rounded-full"
+          />
+        </div>
+
+        <div className="w-full flex flex-col gap-2">
         <div>
           <h1 className="text-base md:text-lg font-normal">{title}</h1>
           <div className="flex items-center gap-1">
+          <span className="text-xs text-gray-500 font-semibold sm:hidden">
+              {channelTitle}
+            </span>
+            <span className="font-bold text-gray-500 sm:hidden">&middot;</span>
+
             <span className="text-xs text-gray-500 font-semibold">
               23K views
             </span>
@@ -39,8 +53,8 @@ const VideoHorizontalCard = ({ video, videoId }) => {
           </div>
         </div>
 
-        <div className="flex gap-2 items-center">
-          <div>
+        <div className="hidden sm:flex gap-2 items-center">
+          <div className="">
             <img
               src={channelData?.snippet?.thumbnails?.medium?.url}
               alt={channelTitle}
@@ -50,10 +64,14 @@ const VideoHorizontalCard = ({ video, videoId }) => {
           <span className="text-xs font-semibold">{channelTitle}</span>
         </div>
 
-        <p className="line-clamp-1 text-xs text-gray-600 font-semibold">
+        <p className="line-clamp-1 text-xs text-gray-600 font-semibold hidden sm:block">
           {description}
         </p>
       </div>
+
+
+      </div>
+      
     </div>
   );
 };
