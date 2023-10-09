@@ -26,11 +26,11 @@ const VideoHorizontalCard = ({ video, videoId }) => {
         />
       </Link>
       <div className="flex sm:block flex-row gap-2 ">
-        <div className="sm:hidden self-start pt-1">
+        <div className="sm:hidden self-start">
           <img
             src={channelData?.snippet?.thumbnails?.medium?.url}
             alt={channelTitle}
-            className="object-cover w-6 h-6 rounded-full"
+            className="object-cover w-9 h-9 rounded-full"
           />
         </div>
 
@@ -58,7 +58,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
             <img
               src={channelData?.snippet?.thumbnails?.medium?.url}
               alt={channelTitle}
-              className="object-cover w-6 h-6 rounded-full"
+              className="object-cover w-9 h-9 rounded-full"
             />
           </div>
           <span className="text-xs font-semibold">{channelTitle}</span>
