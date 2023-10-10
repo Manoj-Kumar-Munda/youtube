@@ -1,4 +1,5 @@
 import React from "react";
+import { calculateTimeDifferenceToNow } from "../utils/helperFunction";
 
 const RelatedVideoCards = ({ video }) => {
 
@@ -27,7 +28,7 @@ const RelatedVideoCards = ({ video }) => {
             </span>
             <span className="font-bold text-gray-500">&middot;</span>
             <span className="text-xs text-gray-500 font-semibold">
-              2 hours ago
+              {calculateTimeDifferenceToNow(publishedAt)} ago
             </span>
           </div>
         </div>

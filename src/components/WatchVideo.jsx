@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import VideoInfoBar from "./VideoInfoBar";
-import { convertCount } from "../utils/helperFunction";
+import { calculateTimeDifferenceToNow, convertCount } from "../utils/helperFunction";
 
 const WatchVideo = ({ videoInfo }) => {
   const { snippet, statistics, id } = videoInfo;
-  const { channelId, description, title } = snippet;
+  const { channelId, description, title,publishedAt } = snippet;
   const { viewCount, commentCount } = statistics;
   const [showMore, setShowMore] = useState(false);
 
@@ -23,7 +23,7 @@ const WatchVideo = ({ videoInfo }) => {
         <VideoInfoBar channelId={channelId} />
       </div>
       <div className="bg-gray-100 px-3 rounded-2xl my-2 ">
-        <p className="text-sm font-semibold py-1">{convertCount(viewCount)} views 2 hours ago</p>
+        <p className="text-sm font-semibold py-1">{convertCount(viewCount)} views {calculateTimeDifferenceToNow(publishedAt)} ago</p>
         <p className={`text-sm font-semibold overflow-hidden ${(showMore)?"line-clamp-none":"line-clamp-4"}`}>
           {description}
         </p>

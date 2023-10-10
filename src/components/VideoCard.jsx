@@ -1,11 +1,11 @@
 import React from "react";
-import { convertCount } from "../utils/helperFunction";
+import { calculateTimeDifferenceToNow, convertCount } from "../utils/helperFunction";
 import useChannel from "../hooks/useChannel";
 
 const VideoCard = ({ item }) => {
   const { snippet, statistics } = item;
 
-  const { channelId, channelTitle, title, thumbnails } = snippet;
+  const { channelId, channelTitle, title, thumbnails, publishedAt } = snippet;
 
   const channelData = useChannel(channelId);
 
@@ -47,7 +47,7 @@ const VideoCard = ({ item }) => {
               </span>
               <span className="text-sm font-normal">&#8226;</span>
               <span className="text-sm font-semibold text-gray-600">
-                16 hours ago
+                {calculateTimeDifferenceToNow(publishedAt)} ago
               </span>
             </div>
           </div>
