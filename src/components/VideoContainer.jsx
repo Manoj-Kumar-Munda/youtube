@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  console.log(videos[0])
+  
 
   useEffect(() => {
     getVideos();

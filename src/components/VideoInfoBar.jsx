@@ -14,9 +14,9 @@ const VideoInfoBar = ({ channelId }) => {
   } = channelData;
 
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col md:flex-row justify-between">
       {/* channelData && subs buttons */}
-      <div className="flex gap-4">
+      <div className="flex justify-between md:gap-4">
         <div className="flex gap-2">
           <div className="rounded-full">
             <img
@@ -39,7 +39,7 @@ const VideoInfoBar = ({ channelId }) => {
       </div>
 
       {/* Like,share,etc... */}
-      <div className="hidden sm:flex gap-4 items-center">
+      <div className="flex gap-4 items-center">
         <div className="flex divide-x-2  border py-1 rounded-2xl">
           <button className="px-2">
             <FontAwesomeIcon icon={faThumbsUp} width={20} />
@@ -49,7 +49,7 @@ const VideoInfoBar = ({ channelId }) => {
           </button>
         </div>
 
-        <button className="hidden md:flex items-center gap-2 border py-1 rounded-2xl px-2 ">
+        <button className="flex items-center gap-2 border py-1 rounded-2xl px-2 ">
           <div>
             <FontAwesomeIcon
               icon={faShare}
@@ -59,7 +59,7 @@ const VideoInfoBar = ({ channelId }) => {
           </div>
           <span className="text-sm font-semibold">Share</span>
         </button>
-        <button className="hidden md:flex items-center gap-2 border py-1 rounded-2xl px-2 ">
+        <button className="flex items-center gap-2 border py-1 rounded-2xl px-2 ">
           <div>
             <FontAwesomeIcon icon={faDownload} style={{ color: "#5c6370" }} width={20}/>
           </div>
