@@ -1,7 +1,7 @@
 import React from 'react'
 import  Upload  from "../assets/Icons/upload.svg";
 import Notifications  from "../assets/Icons/notifications.svg";
-import Github from "../assets/Icons/Github-icon.svg";
+import GithubIcon from "../assets/Icons/Github-icon.svg"
 import { Link } from 'react-router-dom';
 
 const RightHeaderMenu = () => {
@@ -25,7 +25,7 @@ const RightHeaderMenu = () => {
         <div className="">
           <button className="w-9 h-9">
             <Link to={"https://github.com/Manoj-Kumar-Munda/youtube"}>
-            <img src={Github} className="w-full h-full rounded-full" title='Github' />
+            <img src={GithubIcon} className="w-full h-full rounded-full" title='Github' />
             </Link>
           </button>
         </div>
