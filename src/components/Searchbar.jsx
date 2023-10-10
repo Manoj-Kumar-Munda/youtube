@@ -29,7 +29,7 @@ const Searchbar = () => {
     };
   }, [searchQuery]);
 
-  const [showSearch, setShowSearch] = useState(false);
+
   const isInputOnFocus = useSelector(store => store.app.isInputOnFocus);
 
   const getSearchSuggestions = async () => {
