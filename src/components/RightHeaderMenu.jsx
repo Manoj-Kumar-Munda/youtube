@@ -1,7 +1,7 @@
 import React from 'react';
 import  Upload  from "../assets/Icons/upload.svg";
 import Notifications  from "../assets/Icons/notifications.svg";
-import GithubIcon from "../assets/Icons/github-icon.svg";
+import Profile from "../assets/Icons/profile-icon.png";
 import { Link } from 'react-router-dom';
 
 const RightHeaderMenu = () => {
