@@ -1,5 +1,4 @@
 import React from 'react'
-import Profile from "../assets/Icons/profile-icon-png-910.png";
 import  Upload  from "../assets/Icons/upload.svg";
 import Notifications  from "../assets/Icons/notifications.svg";
 import Github from "../assets/Icons/Github-icon.svg";
