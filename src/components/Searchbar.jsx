@@ -29,6 +29,9 @@ const Searchbar = () => {
     };
   }, [searchQuery]);
 
+  const [showSearch, setShowSearch] = useState(false);
+  const isInputOnFocus = useSelector(store => store.app.isInputOnFocus);
+
   const getSearchSuggestions = async () => {
     const data = await fetch(YOUTUBE_SEARCH_SUGGESTION_API + searchQuery);
     const json = await data.json();
@@ -62,9 +65,16 @@ const Searchbar = () => {
 
   return (
     <div className="flex-1 flex md:justify-center justify-end items-center gap-2 md:gap-4">
+      <button className={`${isInputOnFocus?'hidden':'inline-block sm:hidden'} w-10 h-10 p-2 hover:bg-gray-300 rounded-full"`} 
+      onClick={() => {
+        handleOnFocus()
+      }
+      }>
+        <img src={Search} alt="search" className="w-6 h-6"  />
+      </button>
       <div
         id="search-bar"
-        className="relative w-full max-w-xl border sm:border-gray-300 flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl"
+        className={`${isInputOnFocus?'flex':'hidden'} relative w-full max-w-xl border sm:border-gray-300 sm:flex justify-end items-center group focus-within:border focus-within:border-blue-500 rounded-3xl`}
       >
         {showSuggestion && (
           <div className={`absolute bg-white overflow-hidden top-12 left-0 right-0 rounded-md ${suggestions.length !== 0 && 'border'}`}>
