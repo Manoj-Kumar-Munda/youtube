@@ -22,13 +22,13 @@
   width:6px;
 }
 body::-webkit-scrollbar{
-  width: 10px;
+  width: 8px;
 }
 
 #sidebar::-webkit-scrollbar-thumb,body::-webkit-scrollbar-thumb
 {
 	background-color: rgb(235, 81, 81);
-	/* border: 2px solid red; */
+	
   border-radius: 20px;
 }
 
