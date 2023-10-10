@@ -1,6 +1,7 @@
 import React from "react";
 import useChannel from "../hooks/useChannel";
 import { Link } from "react-router-dom";
+import { calculateTimeDifferenceToNow } from "../utils/helperFunction";
 
 const VideoHorizontalCard = ({ video, videoId }) => {
   const {
@@ -14,21 +15,21 @@ const VideoHorizontalCard = ({ video, videoId }) => {
   const channelData = useChannel(channelId);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+    <div className="flex flex-col sm:flex-row gap-2 sm:justify-between">
       <Link
         to={"/watch?v=" + videoId}
-        className="sm:max-w-sm w-full overflow-hidden rounded-lg self-start"
+        className="flex-grow sm:max-w-[360px] min-w-[250px] w-full overflow-hidden rounded-lg self-start"
       >
         <img
-          src={thumbnails?.high?.url}
+          src={thumbnails?.maxres?.url || thumbnails?.standard?.url || thumbnails?.high?.url || thumbnails?.medium?.url}
           alt={title}
           className="object-cover w-full aspect-video"
         />
       </Link>
-      <div className="flex sm:block flex-row gap-2 ">
+      <div className="basis-4/5 flex sm:block flex-row gap-2 ">
         <div className="sm:hidden self-start">
           <img
-            src={channelData?.snippet?.thumbnails?.medium?.url}
+            src={channelData?.snippet?.thumbnails?.high?.url ||  channelData?.snippet?.thumbnails?.medium?.url || channelData?.snippet?.thumbnails?.default?.url}
             alt={channelTitle}
             className="object-cover w-9 h-9 rounded-full"
           />
@@ -36,7 +37,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
 
         <div className="w-full flex flex-col gap-2">
         <div>
-          <h1 className="text-base md:text-lg font-normal">{title}</h1>
+          <h1 className="text-base md:text-lg font-normal line-clamp-2">{title}</h1>
           <div className="flex items-center gap-1">
           <span className="text-xs text-gray-500 font-semibold sm:hidden">
               {channelTitle}
@@ -48,7 +49,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
             </span>
             <span className="font-bold text-gray-500">&middot;</span>
             <span className="text-xs text-gray-500 font-semibold">
-              2 hours ago
+              {calculateTimeDifferenceToNow(publishedAt)} ago
             </span>
           </div>
         </div>
@@ -56,7 +57,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
         <div className="hidden sm:flex gap-2 items-center">
           <div className="">
             <img
-              src={channelData?.snippet?.thumbnails?.medium?.url}
+              src={channelData?.snippet?.thumbnails?.high?.url ||  channelData?.snippet?.thumbnails?.medium?.url || channelData?.snippet?.thumbnails?.default?.url}
               alt={channelTitle}
               className="object-cover w-9 h-9 rounded-full"
             />
@@ -64,7 +65,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
           <span className="text-xs font-semibold">{channelTitle}</span>
         </div>
 
-        <p className="line-clamp-1 text-xs text-gray-600 font-semibold hidden sm:block">
+        <p className="hidden md:block line-clamp-1 text-xs text-gray-600 font-semibold ">
           {description}
         </p>
       </div>
