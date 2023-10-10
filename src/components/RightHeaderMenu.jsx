@@ -25,7 +25,7 @@ const RightHeaderMenu = () => {
         <div className="">
           <button className="w-9 h-9">
             <Link to={"https://github.com/Manoj-Kumar-Munda/youtube"}>
-            <img src={GithubIcon} className="w-full h-full rounded-full" title='Github' />
+            <img src={Profile} className="w-full h-full rounded-full" title='Github' />
             </Link>
           </button>
         </div>
