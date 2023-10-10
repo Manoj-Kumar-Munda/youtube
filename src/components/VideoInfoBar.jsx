@@ -39,7 +39,7 @@ const VideoInfoBar = ({ channelId }) => {
       </div>
 
       {/* Like,share,etc... */}
-      <div className="flex gap-4 items-center">
+      <div className="hidden sm:flex gap-4 items-center">
         <div className="flex divide-x-2  border py-1 rounded-2xl">
           <button className="px-2">
             <FontAwesomeIcon icon={faThumbsUp} width={20} />
