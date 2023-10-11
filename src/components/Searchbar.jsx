@@ -92,7 +92,7 @@ const Searchbar = () => {
                       handleSuggestionClick(item);
                     }}
                   >
-                    <p className="flex space-x-3 items-center">
+                    <div className="flex space-x-3 items-center">
                       <div className="w-5 h-5">
                         <img
                           src={Search}
@@ -101,7 +101,7 @@ const Searchbar = () => {
                         />
                       </div>
                       <span className="font-semibold">{item}</span>
-                    </p>
+                    </div>
                   </li>
                 ))}
               </ul>

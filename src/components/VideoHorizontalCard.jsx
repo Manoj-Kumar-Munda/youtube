@@ -21,7 +21,7 @@ const VideoHorizontalCard = ({ video, videoId }) => {
         className="flex-grow sm:max-w-[360px] min-w-[250px] w-full overflow-hidden rounded-lg self-start"
       >
         <img
-          src={thumbnails?.maxres?.url || thumbnails?.standard?.url || thumbnails?.high?.url || thumbnails?.medium?.url}
+          src={thumbnails?.maxres?.url || thumbnails?.standard?.url || thumbnails?.high?.url}
           alt={title}
           className="object-cover w-full aspect-video"
         />
