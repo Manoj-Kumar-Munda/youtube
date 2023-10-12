@@ -16,7 +16,7 @@ const RelatedVideo = ({videoInfo}) => {
     setRelatedVideos(json?.items);
   }
   return (
-    <div className='flex-grow basis-80'>
+    <div className='order-2 flex-grow basis-80'>
       <div className='flex flex-col gap-4'>
       {
         relatedVideos && (

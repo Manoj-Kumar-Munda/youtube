@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import VideoInfoBar from "./VideoInfoBar";
 import { calculateTimeDifferenceToNow, convertCount } from "../utils/helperFunction";
+import Comments from "./CommentSection";
 
 const WatchVideo = ({ videoInfo }) => {
   const { snippet, statistics, id } = videoInfo;
@@ -11,7 +12,9 @@ const WatchVideo = ({ videoInfo }) => {
 
 
   return (
-    <div className="w-full flex flex-col basis-8/12 flex-grow">
+    <>
+    
+    <div className="order-1 w-full flex flex-col basis-8/12 flex-grow">
       <iframe
         className=" w-full aspect-video rounded-xl"
         src={`https://www.youtube.com/embed/${id}?si=LCgbMDFcmI_PjNc3`}
@@ -35,6 +38,9 @@ const WatchVideo = ({ videoInfo }) => {
         </span>
       </div>
     </div>
+
+    
+    </>
   );
 };
 

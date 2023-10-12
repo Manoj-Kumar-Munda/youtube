@@ -48,3 +48,13 @@ export function calculateTimeDifferenceToNow(targetDate) {
     return `${months} months`;
   } else return `${years} years`;
 }
+
+export const getComment = (item, isReply) => {
+  if(isReply){
+    const {snippet} = item;
+    return snippet;
+  }else{
+    const {snippet:{topLevelComment:{snippet}}} = item;
+    return snippet;
+  }
+}
