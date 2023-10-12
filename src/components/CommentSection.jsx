@@ -9,7 +9,6 @@ const CommentSection = ({ videoId }) => {
   }, []);
 
   const getCommentsList = async () => {
-    console.log(videoId);
     const data = await fetch(
       "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&order=relevance&videoId=" +
         videoId +
@@ -17,7 +16,7 @@ const CommentSection = ({ videoId }) => {
         import.meta.env.VITE_API_KEY
     );
     const json = await data.json();
-    // console.log(json?.items);
+  
     setCommentsList(json?.items);
   };
   return (
@@ -27,7 +26,7 @@ const CommentSection = ({ videoId }) => {
       {commentsList.length === 0 ? (
         <h1>Loading</h1>
       ) : (
-        <div className="flex flex-col gap-2 px-4 border py-4 rounded-lg">
+        <div className="flex flex-col gap-2 px-2 sm:px-4 border py-2 sm:py-4 rounded-lg">
           {commentsList.map((item) => {
             return <Comment comment={item} key={item?.id} isReply={false} />;
           })}
