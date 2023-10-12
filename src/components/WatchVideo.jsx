@@ -17,7 +17,7 @@ const WatchVideo = ({ videoInfo }) => {
     <div className="order-1 w-full flex flex-col basis-8/12 flex-grow">
       <iframe
         className=" w-full aspect-video rounded-xl"
-        src={`https://www.youtube.com/embed/${id}?si=LCgbMDFcmI_PjNc3`}
+        src={`https://www.youtube.com/embed/${id}?si=LCgbMDFcmI_PjNc3&autoplay=1`}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
